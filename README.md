@@ -40,4 +40,7 @@
 ## Scaffold
 <ol>
     <li>Scaffold é um compponete que vai nos ajudar com uma estrutura pronto para criação de um layout responsivo.</li>
+    <li>Para trabalhar com compose é necessário perceber que os elementos vão ser funções dentro de funções.</li>
+    <li>A unidade de medida usada para texto é sp.</li>
+    <li>É necessário que na chaves do scaffold passar o paddingValues, que vai receber de outra função composable que vai estar dentro dele, pode ser linha ou coluna, é isso que vai fazer a coluna ficar posicionada dentro do Scaffold.</li>
 </ol>
