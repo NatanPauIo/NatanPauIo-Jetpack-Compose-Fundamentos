@@ -14,7 +14,25 @@
         Exemplo: @Composable
                 fun NovaTela(){
                     }
-    <li>Nome de funções que vão criar interface grafica é necessario começar com letras maiusculas.</li>
+    <li>Nome de funções que vão criar interfaces grafica é necessario que comecem com letras maiusculas.</li>
     <li>Os componentes do Jetpack Compose também vão ser funções.</li>
     <li>Para renderizar os componentes é necessario chamar funções do metodo setContet.</li>
+</ol>
+
+## Column e Row
+<ol>
+    <li>As linhas e colunas no código vão ser como escrever metodos, em que se você coloca parenteses neles eles podem receber alguns parametros e basta utilizar a virgula para ir adicinando os outros parametros esperados.</li>
+    <li>O parametro do atributo modifer é uma interface que vem androidx.compose.ui.</li>
+    <li>Assim que chamamos o modifer podemos dar o ponto e chamar o atributos que queremos modificar como altura, largura, background e etc, e basta apenas colocar o ponto e chamar o outro metodo que vai definir o atributo.</li>
+            Exemplo: Column( 
+                modifer = Modifer.height(100dp).width(50dp).background(color = Color.green) 
+            )
+    <li>A unidade que usamos na medida é o dp.</li>
+    <li>A coluna por padrão ela não tem altura nem largura.</li>
+    <li>Na coluna para pegar os valores maximos tanto de largura como de largura utilizamos os metodos fillMax.</li>
+    <li>A função size no Modifer serve para definir tanto largura como altura.</li>
+    <li>Para fazer o alinhamento dos elementos utilizamos horizontalAlignment e o verticalArrangement.</li>
+    <li>Na coluna os componentes que vão sendo adicionados sempre vão ficar um abaixo do outro.</li>
+    <li>A coluna seria o equivalente do linear layout do xml.</li>
+    <li>Com as linhas os elementos que vão sendo adicionados vão sendo organizados um do lado dos outros.</li>
 </ol>

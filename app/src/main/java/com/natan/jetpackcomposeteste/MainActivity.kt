@@ -4,14 +4,22 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.natan.jetpackcomposeteste.ui.theme.JetPackComposeTesteTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,12 +32,32 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @Preview
     @Composable
     fun NovaTela(){
 
-        Column() {
+        Column(Modifier.fillMaxSize().background(color = Color.White),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
 
-            Text(text = "Testando")
+            Surface(Modifier.size(100.dp),
+                color = Color.Red
+            ) { }
+
+            Surface(Modifier.size(100.dp),
+                color = Color.Yellow
+            ) {
+
+            }
+
+            Surface(Modifier.size(100.dp),
+                color = Color.Magenta
+            ) { }
+
+            Surface(Modifier.size(100.dp),
+                color = Color.Blue
+            ) { }
 
         }
     }
