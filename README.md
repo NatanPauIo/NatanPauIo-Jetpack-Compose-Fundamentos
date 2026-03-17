@@ -21,6 +21,7 @@
 
 ## Column e Row
 <ol>
+    <li>As colunas e linhas são usados como containers.</li>
     <li>As linhas e colunas no código vão ser como escrever metodos, em que se você coloca parenteses neles eles podem receber alguns parametros e basta utilizar a virgula para ir adicinando os outros parametros esperados.</li>
     <li>O parametro do atributo modifer é uma interface que vem androidx.compose.ui.</li>
     <li>Assim que chamamos o modifer podemos dar o ponto e chamar o atributos que queremos modificar como altura, largura, background e etc, e basta apenas colocar o ponto e chamar o outro metodo que vai definir o atributo.</li>
