@@ -89,7 +89,7 @@ class MainActivity : ComponentActivity() {
                         color = Color.Red
                     ) { }
 
-                    Surface(Modifier.size(100.dp),
+                    Surface(Modifier.size(100.dp).weight(5f),
                         color = Color.Yellow
                     ) {
 
