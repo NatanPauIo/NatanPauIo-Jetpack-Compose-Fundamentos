@@ -62,6 +62,7 @@
 
 ## Box
 <ol>
+    <li>O box pode ser utilizado como container principal ou como secundario</li>
     <li>Ao utilizarmos o box, se passarmos o parametro content não é necessário usar chaves a frente de seus parenteses para passar conteudo.</li>
         Box(<br>
             content = { <br>
