@@ -1,8 +1,10 @@
 package com.natan.jetpackcomposeteste
 
+import android.R.attr.onClick
 import android.R.attr.title
 import android.R.id.title
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -17,22 +19,32 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.BottomEnd
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.VerticalAlignmentLine
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.natan.jetpackcomposeteste.ui.theme.JetPackComposeTesteTheme
 import org.w3c.dom.Text
 
@@ -50,6 +62,9 @@ class MainActivity : ComponentActivity() {
     @Preview
     @Composable
     fun NovaTela(){
+        var email by remember { mutableStateOf("") }
+        var senha by remember { mutableStateOf("") }
+        var contexto = LocalContext.current
 
         Scaffold(
             topBar = {
@@ -76,55 +91,29 @@ class MainActivity : ComponentActivity() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(text = "Página de Login", Modifier.padding(20.dp),fontWeight = FontWeight.Bold, fontSize = 25.sp,
+                    )
 
+                OutlinedTextField(value = email, onValueChange = {
+                    email = it }, label = { Text(text = "Login")})
 
+                OutlinedTextField(value = senha, onValueChange = {
+                    senha = it }, label = { Text(text = "Senha")})
 
-                Surface(Modifier.size(100.dp),
-                    color = Color.Gray
-                ) { }
-
-
-                Row() {
-                    Surface(Modifier.size(100.dp),
-                        color = Color.Red
-                    ) { }
-
-                    Surface(Modifier.size(100.dp).weight(5f),
-                        color = Color.Yellow
-                    ) {
-
+                //botão e suas ações
+                Button(onClick = {
+                    if(email.isEmpty() || senha.isEmpty()){
+                        Toast.makeText(contexto,"Preencha todos os campos", Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(contexto,"Usuario logado com sucesso!", Toast.LENGTH_SHORT).show()
                     }
 
-                    Surface(Modifier.size(100.dp),
-                        color = Color.Black
-                    ) {
-
-                    }
-
-
-                }
-                Surface(Modifier.size(100.dp),
-                    color = Color.Magenta
-                ) { }
-
-                Box(Modifier.size(200.dp).background(Color.Black), contentAlignment = BottomEnd){
-                    Box(Modifier.size(100.dp).background(Color.Yellow),
-                        contentAlignment = Alignment.TopStart
-                    ){
-                        Box(Modifier.size(50.dp).background(Color.Green),
-                            contentAlignment = Alignment.BottomEnd
-                        ){
-                            Box(Modifier.size(25.dp).background(Color.Blue),
-
-                            ){}
-                        }
-                    }
+                },Modifier.padding(10.dp), colors = ButtonDefaults.buttonColors(Color.Cyan),) {
+                    Text(text = "Login")
                 }
 
             }
         }
-
-
     }
 }
 

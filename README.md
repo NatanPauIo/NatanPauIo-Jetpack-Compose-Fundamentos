@@ -69,5 +69,29 @@
                 } <br>
             )
     <li>Os elementos que estão dentro do box se estiverem na mesma posição vão ficar um por cima do outro.</li>
-    <li>Para usar o box como componente principal basta usar a função fillMaxSize().</li>
+    <li>Para usar o box como componente principal basta usar a função fillMaxSize().</li>d
+</ol>
+
+## State 
+<ol>
+    <li>O button espera o parametro onClick.</li>
+        
+        Exemplo: Button( onClick = {} ){}
+
+<li>Para valores que vão mudar utilizamos o state, que se declara da seguinte forma:</li>
+        
+        Exemplo: var nomedavaravelstate by remember{mutableStateOf()}
+
+<li>O states pode se iniciar o estado com um valor especifico passado dentro do mutableStateOf(), e depois pode mudar esse valor a partir de alguma ação.</li>
+<li>Os states podem ter qualquer tipo de valor primitivo.</li>
+<li>OutlinedTextField() é o componente de caixa de texto.</li>
+<li>O OutlinedTextField precisa de dois parametros obrigatorios, que é o "value" que seria o estado inicial da caixa de texto, e o outro é o "onValueChange = {}" que é o que vai ser digitado na caixa de texto.</li>
+        
+        Exemplo:OutlinedTextField(value = valor, onValueChange){}
+
+<li>Para utilizar o toast que é a mensagem temporaria é necessário ter um contexto que pode ser conseguido da seguinte forma: </li>
+
+        Exemplo: var contexto = LocalContext.current //Pega o contexto atual
+
+<li>O onValueChange do OutlinedTextField possui uma variavel it que é valor do que foi digitado no textfield.</li>
 </ol>
