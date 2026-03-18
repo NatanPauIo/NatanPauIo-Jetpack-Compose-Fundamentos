@@ -64,11 +64,12 @@
 <ol>
     <li>O box pode ser utilizado como container principal ou como secundario</li>
     <li>Ao utilizarmos o box, se passarmos o parametro content não é necessário usar chaves a frente de seus parenteses para passar conteudo.</li>
-        Box(<br>
+        
+    Box(
             content = { <br>
                 } <br>
             )
-    <li>Os elementos que estão dentro do box se estiverem na mesma posição vão ficar um por cima do outro.</li>
+<li>Os elementos que estão dentro do box se estiverem na mesma posição vão ficar um por cima do outro.</li>
     <li>Para usar o box como componente principal basta usar a função fillMaxSize().</li>d
 </ol>
 
