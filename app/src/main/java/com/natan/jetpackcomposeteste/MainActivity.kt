@@ -14,8 +14,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material3.BottomAppBar
@@ -42,9 +44,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.natan.jetpackcomposeteste.componentepronto.NovoInput
 import com.natan.jetpackcomposeteste.ui.theme.JetPackComposeTesteTheme
 import org.w3c.dom.Text
 
@@ -82,7 +86,7 @@ class MainActivity : ComponentActivity() {
             )
             }
           , bottomBar = {
-                BottomAppBar(containerColor = Color.Green) { }
+                BottomAppBar(containerColor = Color.Cyan) { }
             }
 
         ) {paddingValues ->
@@ -94,11 +98,28 @@ class MainActivity : ComponentActivity() {
                 Text(text = "Página de Login", Modifier.padding(20.dp),fontWeight = FontWeight.Bold, fontSize = 25.sp,
                     )
 
-                OutlinedTextField(value = email, onValueChange = {
-                    email = it }, label = { Text(text = "Login")})
+                NovoInput(value = email,
+                    onvalue = {
+                    email = it
+                }, label = "Email",
+                    modifer = Modifier.padding(30.dp).fillMaxWidth(),
+                    teclado = KeyboardOptions(
+                    keyboardType = KeyboardType.Email
+                )
+                )
 
-                OutlinedTextField(value = senha, onValueChange = {
-                    senha = it }, label = { Text(text = "Senha")})
+
+                NovoInput(value = senha,
+                    onvalue = {
+                        senha = it
+                    }, label = "Senha",
+                    modifer = Modifier.padding(30.dp, 0.dp).fillMaxWidth(),
+                    teclado = KeyboardOptions(
+                        keyboardType = KeyboardType.NumberPassword
+                    )
+                )
+
+
 
                 //botão e suas ações
                 Button(onClick = {

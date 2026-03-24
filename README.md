@@ -96,3 +96,13 @@
 
 <li>O onValueChange do OutlinedTextField possui uma variavel it que é valor do que foi digitado no textfield.</li>
 </ol>
+
+## Criando seu próprio componente
+<ol>
+    <li>Criando seus próprios modelo evita na repetição de código.</li>
+    <li>Ao utilizarmos o Modifer para criação de um componente é preciso importar a interface modifer do compose.ui.</li>
+    <li>Nas alterações de cores os atributos com unfocused vai ser quando para definir quando clicar nele já o focused é quando ele está em seu estado normal.</li>
+    <li>Para definir parametros opcional, temos que colocar o devido atributo para receber a classe necessária, fazendo isso ele não será obrigatorio na chamada da função.</li>
+    <li>Para definir o tipo de teclado que vai ser usado no input utilizamos o atributo "keyboardOptions", que vai ser modificado no "keyboardType".</li>
+    <li>Se não definir valores de tamanho para input quando digitarmos demais ele pode alterar de tamanho se não estiver com as medidas definidas.</li>
+</ol>
